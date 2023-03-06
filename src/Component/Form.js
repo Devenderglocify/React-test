@@ -5,20 +5,58 @@ class Form extends Component {
       super(props)
     
       this.state = {
-         username: ''
+         username: '',
+         comments:'',
+         topic: ''
       }
     }
     handleUsernameChange = (event)=> {
         this.setState({
             username: event.target.value
         })
+    };
+    handleCommentChange = (event)=> {
+      this.setState({
+        comments: event.target.value
+      })
+    };
+    handleTopicChange = (event)=> {
+      this.setState({
+        topic: event.target.value
+      })
+    };
+    handleSubmit = e=> {
+      alert(`${this.state.username} ${this.state.comments} ${this.state.topic}`)
+      e.preventDefault();
     }
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.handleSubmit}>
+          <div>
             <label>Name</label>
-            <input type='text' value={this.state.username} onChange={this.handleUsernameChange} />
+            <input 
+              type='text' 
+              value={this.state.username} 
+              onChange={this.handleUsernameChange} />
+          </div>
+          <div>
+            <label>Comments</label>
+            <textarea 
+              value={this.state.comments} 
+              onChange={this.handleCommentChange}></textarea>
+            </div>         
+          <div>
+            <label>Topic</label>
+            <select 
+            value={this.state.topic}
+            onChange={this.handleTopicChange}>            
+              <option value="react">React</option>
+              <option value="angular">Angular</option>
+              <option value="vue">VUE</option>
+            </select> 
+            </div>  
+            <button type='submit'>submit</button>    
         </form>
       </div>
     )

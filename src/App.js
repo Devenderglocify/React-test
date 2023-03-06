@@ -14,13 +14,19 @@ import NameList from './Component/NameList';
 import Stylesheet from './Component/Stylesheet';
 import InlineStyle from './Component/InlineStyle';
 import Form from './Component/Form';
+import LifeCycle from './Component/LifeCycle';
+import Fragment from './Component/Fragment';
+import Tables from './Component/Tables';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Form />
+        <Tables />
+        {/* <Fragment /> */}
+        {/* <LifeCycle /> */}
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+        {/* <Form /> */}
         {/* <InlineStyle /> */}
         {/* <Stylesheet primary={true}/> */}
         {/* <NameList /> */}
